@@ -2,6 +2,6 @@
 
 @section('content')
 
-    Ciao
+    <h2>Ciao. Questa è la pagina home di backoffice!</h2>
 
 @endsection
