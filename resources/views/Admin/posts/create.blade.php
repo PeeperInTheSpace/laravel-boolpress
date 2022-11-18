@@ -36,6 +36,34 @@
             </select>
         </div>
 
+        <!-- Tags -->
+
+        <div>
+            <label>Tags:</label>
+            @foreach ($tags as $tag) {
+
+                <label>
+                    {{ $tag->name }}
+                </label>
+                <input type="checkbox" name="tags[]" value="{{ $tag->id }}">
+            }
+
+            @endforeach
+        </div>
+
+        <div>
+            <label for="tags_id">Categoria:</label>
+            <select name="tags_id">
+                <option value="">Nessuna</option>
+                @foreach ($categories as $tags)
+                    <option value="{{ $tags->id }}"
+                        {{ $tags->id == old('$tags_id', -1) ? 'selected' : '' }}>
+                        {{ $tags->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
         <div @error('content') class="is-invalid" @enderror>
             <label for="content">Descrizione:</label>
             <textarea name="content" required cols="30" rows="10">{{ old('content', '') }}</textarea>
