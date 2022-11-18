@@ -3,11 +3,11 @@
 @section('content')
 
 @if ($errors->any())
-    <div class="row">
+
         <div class="col-12 bg-danger">
             Ci sono errori...
         </div>
-    </div>
+
 @endif
 
     <form action="{{ route('admin.posts.update', $post->id) }}" method="post">
