@@ -9,6 +9,9 @@
  window.Vue = require("vue");
  window.axios = require("axios");
 
+import App from "./views/App";
+import router from "./router";
+
 /**
   * The following block of code may be used to automatically register your
   * Vue components. It will recursively scan this directory for the Vue
@@ -28,8 +31,8 @@
   * or customize the JavaScript scaffolding to fit your unique needs.
   */
 
-  import App from "./views/App";
   const app = new Vue({
       el: "#root",
       render: (h) => h(App),
+      router
   });
