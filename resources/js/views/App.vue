@@ -1,19 +1,16 @@
 <template>
     <div>
-     <ExampleComponent/>
+        <PostsComponent/>
     </div>
-  </template>
-
-  <script>
-  import ExampleComponent from '../components/ExampleComponent.vue'
-
-
-  export default {
-      name: 'App',
-      components: {ExampleComponent}
-      }
-  </script>
-
-  <style scoped lang="scss">
-
-  </style>
+</template>
+<script>
+import PostsComponent from '../components/PostsComponent.vue';
+export default{
+    name: 'App',
+    components: {
+        PostsComponent
+    }
+}
+</script>
+<style scoped lang="scss">
+</style>

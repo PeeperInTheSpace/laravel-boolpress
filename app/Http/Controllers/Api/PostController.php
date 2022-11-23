@@ -17,20 +17,21 @@ class PostController extends Controller
     public function index()
     {
         try{
-            $posts = Post::all();
+            $posts=Post::paginate(5);
+
             $data = [
                 'results' => $posts,
                 'success' => true
             ];
-        } catch(Error $e) {
+        } catch(Error $e){
             $data = [
                 'error' => $e->message,
                 'success' => false
             ];
         }
-
         return response()->json($data);
     }
+
 
     /**
      * Show the form for creating a new resource.
