@@ -1,22 +1,19 @@
 <template>
     <div class="container">
         <NavComponent :nav='nav'/>
-        <router-view/>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-
-import NavComponent from '../components/NavComponent.vue';
-
+import NavComponent from '../components/NavComponent.vue'
 export default{
     name: 'App',
     components: {
         NavComponent
     },
-
-    data() {
-        return {
+    data(){
+        return{
             nav: [
                 {
                     path: '/',
@@ -28,12 +25,12 @@ export default{
                 },
                 {
                     path: '/about',
-                    label: 'Chi siamo'
+                    label: 'Chi Siamo'
                 },
                 {
                     path: '/contacts',
                     label: 'Contatti'
-                }
+                },
             ]
         }
     }

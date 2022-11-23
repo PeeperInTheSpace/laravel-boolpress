@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from "./pages/Home";
 import PostsIndex from "./pages/PostsIndex";
+import PostsShow from "./pages/PostsShow";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
@@ -19,7 +20,12 @@ const router = new VueRouter({
             path: "/posts",
             name: "Posts-index",
             component: PostsIndex,
-            props: (route)=>({page:route.query.page})
+            props: route=>({page: route.query.page})
+        },
+        {
+            path: "/posts/:id",
+            name: "posts-show",
+            component: PostsShow
         },
         {
             path: "/about",
