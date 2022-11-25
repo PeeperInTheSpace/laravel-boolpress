@@ -6,7 +6,9 @@ use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Category;
+use App\Mail\NewPostNotificationToAdmin;
 use App\Tag;
+use Illuminate\Support\Facades\Mail;
 
 class PostController extends HomeController
 {
@@ -67,6 +69,8 @@ class PostController extends HomeController
 
             $post->tags()->sync($form_data['tags']);
         }
+
+        Mail::to('superadmin@boolpress.it')->send(new NewPostNotificationToAdmin($post));
 
         return redirect()->route('admin.posts.show', $post->id);
 
